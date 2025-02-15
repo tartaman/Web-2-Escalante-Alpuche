@@ -1,0 +1,15 @@
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+} 
+nav {
+    display: flex;
+    justify-content: space-between;
+}
+a {
+    color: red;
+}
+.menu_options {
+    display: flex;
+    justify-content: space-around;
+    gap:1rem;
+}

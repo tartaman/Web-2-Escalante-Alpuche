@@ -20,4 +20,4 @@ class user_address(models.Model):
     created_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
     def __str__(self):
-        return self.country
+        return self.country 
