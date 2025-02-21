@@ -1,14 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
+{%extends "base/base.html"%}
     {%load static%}
+    {%block style%}
     <link rel="stylesheet" href="{%static 'css/users.css'%}">
-</head>
-<body>
+    {%endblock%}
+    {%block content%}
     <h1>{{title}}</h1>
     <div class="container">
         {% for i in users %}
@@ -23,5 +18,7 @@
             {% include 'components/userCard.html' with name=i.name email=i.email photo=i.photo id=i.id %}
         {% endfor %}
     </div>
-</body>
-</html>
+    {%endblock%}
+    {% block scripts %}
+    <script src="{static 'js/index.js'}"></script>
+    {%endblock%}

@@ -1,15 +1,18 @@
 *{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20rem;
 } 
 nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 a {
     color: red;
+    align-self: center;
 }
-.menu_options {
+.menu_options{
     display: flex;
     justify-content: space-around;
     gap:1rem;
+    align-content: center;
 }

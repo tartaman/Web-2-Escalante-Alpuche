@@ -9,22 +9,19 @@
     <nav>
         <div class="menu">
             <div class="menu_logo">
-                <a href=""><img src="https://imgs.search.brave.com/meLJPqYVcGTDwtX2zPC9fJeEmJzQRSQaO_hvvFbVtGM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMzLm1lbWVkcm9p/ZC5jb20vaW1hZ2Vz/L1VQTE9BREVENzYw/LzYzYzQzMDIwNDgw/ZjYuanBlZw" alt=""></a>
+                <a href=""><img height="150px" src="https://imgs.search.brave.com/meLJPqYVcGTDwtX2zPC9fJeEmJzQRSQaO_hvvFbVtGM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMzLm1lbWVkcm9p/ZC5jb20vaW1hZ2Vz/L1VQTE9BREVENzYw/LzYzYzQzMDIwNDgw/ZjYuanBlZw" alt=""></a>
             </div>
         </div>
         <div class="menu_options">
-            <div>
-                <a href="">Home</a>
-            </div>
-            <div>
+
+                <a href="{% url 'landing'%}">Home</a>
+
                 <a href="">About</a>
-            </div>
-            <div>
-                <a href="">Users</a>
-            </div>
-            <div>
+
+                <a href="{% url 'indexUsers' %}">Users</a>
+
                 <a href="">Orders</a>
-            </div>
+
         </div>
     </nav>
 </body>
