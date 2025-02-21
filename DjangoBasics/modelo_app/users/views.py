@@ -1,6 +1,8 @@
 from django.http import HttpResponse
 from .models import user, user_address
 from django.shortcuts import render, get_object_or_404
+import json
+from django.http import JsonResponse
 
 def indexUsers(request):
     users = user.objects.all()
@@ -12,7 +14,10 @@ def indexUsers(request):
 
 def createUsersView(request):
     return render(request, "users/create.html")
-
+def createUserByFetch(request):
+    body_unicode = request.body.decode('utf-8')
+    body = json.loads(body_unicode)
+    return JsonResponse({"Nombre Recibido": body.get("name")})
 def createUser(request):
     data = {}
     try:
