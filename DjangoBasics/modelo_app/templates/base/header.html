@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+    {%load static%}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/menu.css' %}">
     <title>Document</title>
 </head>
 <body>
     <nav>
         <div class="menu">
             <div class="menu_logo">
-                <a href=""><img height="150px" src="https://imgs.search.brave.com/meLJPqYVcGTDwtX2zPC9fJeEmJzQRSQaO_hvvFbVtGM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMzLm1lbWVkcm9p/ZC5jb20vaW1hZ2Vz/L1VQTE9BREVENzYw/LzYzYzQzMDIwNDgw/ZjYuanBlZw" alt=""></a>
+                <a href=""><img height="150px" src="https://static.wikia.nocookie.net/logopedia/images/7/78/The_Battle_Cats.png/revision/latest?cb=20230722040312" alt=""></a>
             </div>
         </div>
         <div class="menu_options">
 
-                <a href="{% url 'landing'%}">Home</a>
+                <a href="">Home</a>
 
-                <a href="">About</a>
+                <a href="">Boletos</a>
 
-                <a href="{% url 'indexUsers' %}">Users</a>
-
-                <a href="{%url 'createUsersView'%}">Create</a>
+                <a href="">Eventos</a>
 
         </div>
     </nav>

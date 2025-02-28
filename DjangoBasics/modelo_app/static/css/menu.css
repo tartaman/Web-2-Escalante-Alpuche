@@ -1,0 +1,51 @@
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #656aff;
+}
+.menu_options {
+    display: flex;
+    width: 70%;
+    justify-content: space-around;
+}
+footer {
+    background-color: #656aff;
+    display: flex;
+    justify-content: center;
+    color: #fff;
+}
+.menu_options a {
+    text-decoration: none;
+    color: whitesmoke;
+    font-size: 1.25rem;
+}
+
+.menu_options a:hover {
+    color: #dacaff;
+}
+.flex {
+    display: flex;
+    gap: 1rem;
+}
+.main {
+    padding: 3rem 5rem;
+}
+.eventoCard {
+    display: flex;
+}
+.section {
+    display: flex;
+}
+.noticias {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
