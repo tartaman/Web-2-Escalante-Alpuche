@@ -1,0 +1,8 @@
+{%extends 'base/base.html'%}
+{%block content%}
+<div style="display: flex;">
+    {% for i in eventos%}
+        {% include 'additives/eventoCardFull.html' with imagen=i.imagen_url nombre=i.name localidad=i.localidad_id desc=i.descripcion %}
+    {%endfor%}
+</div>
+{%endblock%}
