@@ -1,6 +1,9 @@
 {%extends 'base/base.html'%}
 {%load static%}
 {%block content%}
+<div style="display: flex; justify-content: center; margin: 1rem;">
+    <h1>Eventos</h1>
+</div>
 <div style="padding: 2rem;">
     <a href="{% url 'addEvento'%}">
         <button style="border: none; padding: 1rem; background-color: rgb(46, 46, 46); color: white;">
@@ -8,9 +11,9 @@
         </button>
     </a>
 </div>
-<div style="display: flex;">
+<div style="display: flex; flex-wrap: wrap; gap: 1rem;">
     {% for i in eventos%}
-        {% include 'additives/eventoCardFull.html' with imagen=i.imagen_url nombre=i.name localidad=i.localidad_id desc=i.descripcion id=i.id%}
+        {% include 'additives/eventoCard.html' with local=i.localidad_id.name url=i.imagen_url nombre=i.name localidad=i.localidad_id desc=i.descripcion id=i.id%}
     {%endfor%}
 </div>
 {%endblock%}
