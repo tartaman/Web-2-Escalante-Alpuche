@@ -1,8 +1,19 @@
 {%extends 'base/base.html'%}
+{%load static%}
 {%block content%}
+<div style="padding: 2rem;">
+    <a href="{% url 'addEvento'%}">
+        <button style="border: none; padding: 1rem; background-color: rgb(46, 46, 46); color: white;">
+            Agregar Evento
+        </button>
+    </a>
+</div>
 <div style="display: flex;">
     {% for i in eventos%}
-        {% include 'additives/eventoCardFull.html' with imagen=i.imagen_url nombre=i.name localidad=i.localidad_id desc=i.descripcion %}
+        {% include 'additives/eventoCardFull.html' with imagen=i.imagen_url nombre=i.name localidad=i.localidad_id desc=i.descripcion id=i.id%}
     {%endfor%}
 </div>
+{%endblock%}
+{% block scripts%}
+<script src="{% static 'js/verboletos.js'%}"></script>
 {%endblock%}

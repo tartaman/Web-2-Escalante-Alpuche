@@ -1,8 +1,12 @@
-{%extends "base/base.html"%}
-{%block content%}
+{% extends "base/base.html" %}
+{% block content %}
 <div style="display: flex;">
-    {% for item in boletos%}
-        {% include 'additives/boletoCard.html' with nombre=item.name localidad=item.eventos_id.localidad_id.name precio=item.precio %}
-    {%endfor%}
+    {% if boletos %}
+        {% for item in boletos %}
+            {% include 'additives/boletoCard.html' with nombre=item.name localidad=item.eventos_id.localidad_id.name precio=item.precio %}
+        {% endfor %}
+    {% else %}
+        <p>No hay productos disponibles</p>
+    {% endif %}
 </div>
-{%endblock%}
+{% endblock %}

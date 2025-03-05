@@ -1,0 +1,43 @@
+{%extends 'base/base.html'%}
+{%load static%}
+{%block content%}
+<div style="display: flex; justify-content: center;">
+    <h2 style="margin: 0 auto;">Agregar producto</h2>
+</div>
+<div style="margin: 2rem;">
+    <form style="display: flex; flex-direction: column; padding: 0 2rem; gap: 1rem;" id="crearEventoForm" action="POST">
+        <input type="hidden" id="csrftoken" value="{{csrf_token}}">
+        <input type="text" name="name" id="nombreEvento" placeholder="Nombre del producto aqui" required>
+        <input type="number" name="precio" id="precio" placeholder="precio" min="1">
+        <select id="listaLocalidades" type="text" list="listaLocalidades" name="localidad_id" required placeholder="Escriba su localidad"></select>
+        <div style="display: flex; justify-content: center;">
+            <button style="padding: 1rem 2rem; background-color: rgb(40, 40, 40); border-radius: 1rem; color: white;" type="submit" id="crearEventoButton">Crear</button>
+        </div>
+    </form>
+</div>
+<div>
+    <h2>Elementos agregados recientemente</h2>
+    <div>
+        <div class="addres-container">
+            <div class="grid-header">Nombre</div>
+            <div class="grid-header">Precio</div>
+            <div class="grid-header">Localidad</div>
+            <div class="grid-header">Created at</div>
+            <div class="grid-header">Acciones</div>
+            {% for item in productos %}
+            <div class="addres-item">{{item.name}}</div>
+            <div class="addres-item">{{item.precio}}</div>
+            <div class="addres-item">{{item.localidad_id.name}}</div>
+            <div class="addres-item">{{item.created_at}}</div>
+            <div class="addres-item"><button id="EliminarButton" eventID ="{{item.id}}">Eliminar</button></div>
+            {% endfor %}
+        </div>
+    
+    </div>
+</div>
+{%endblock%}
+{%block scripts%}
+    <script src="{% static 'js/agregarProducto.js' %}"></script>
+    <script src="{% static 'js/llenarLocalidades.js' %}"></script>
+    <script src="{% static 'js/eliminarProducto.js' %}"></script>
+{%endblock%}

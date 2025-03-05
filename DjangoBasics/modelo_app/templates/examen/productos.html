@@ -1,0 +1,16 @@
+{% extends 'base/base.html'%}
+{% load static%}
+{%block content%}
+<div style="padding: 2rem;">
+    <a href="{% url 'addProducto'%}">
+        <button style="border: none; padding: 1rem; background-color: rgb(46, 46, 46); color: white;">
+            Agregar producto
+        </button>
+    </a>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+    {% for i in productos%}
+    {% include 'additives/productoCard.html' with nombre=i.name localidad=i.localidad_id.name precio=i.precio %}
+    {%endfor%}
+</div>
+{%endblock%}
