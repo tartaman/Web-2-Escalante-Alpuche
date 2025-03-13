@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <!-- Agregar el script de Babel -->
+    <script src="https://unpkg.com/@babel/standalone"></script>
+    <script type="text/babel" src="components/Button.js"></script>
+    <script type="text/babel" src="components/Alumno.js"></script>
+    <link rel="stylesheet" href="styles/styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root">
+
+    </div>
+</body>
+<script type="text/babel">
+
+
+
+    function saludar(){
+        alert("Hola mundo")
+    }
+    function despedir(){
+        alert("Adios mundo")
+    }
+
+    function App() {
+        const { useState } = React;
+        const alumnos = [
+            { nombre: "Juan", matricula: "A123", calificacion: 10 },
+            { nombre: "Pepe", matricula: "B456", calificacion: 9 },
+            { nombre: "Pablo", matricula: "C789", calificacion: 4 },
+            { nombre: "Fernando", matricula: "D101", calificacion: 100 }
+        ];
+
+        return (
+            <div>
+                <h1>Lista de Alumnos</h1>
+                <div className="container">
+                    {alumnos.map((alumno, index) => (
+                        <Alumno 
+                            key={index} 
+                            nombre={alumno.nombre} 
+                            matricula={alumno.matricula} 
+                            calificacion={alumno.calificacion} 
+                        />
+                    ))}
+                </div>
+            </div>
+        );
+
+    }
+    
+    const root = ReactDOM.createRoot(document.querySelector("#root"));
+    root.render(<App />);
+</script>
+</html>

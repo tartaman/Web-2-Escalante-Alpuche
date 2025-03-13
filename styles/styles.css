@@ -1,0 +1,14 @@
+.container {
+    display: flex;
+    gap: 1rem;
+}
+.alumno-container {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.alumno-info {
+    margin-top: 10px;
+}
