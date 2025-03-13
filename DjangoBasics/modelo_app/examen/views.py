@@ -110,7 +110,7 @@ def createProductoByFetch(request):
             return JsonResponse({"message": "El nombre no puede estar vacio"})
         if body.get("precio") == "":
             return JsonResponse({"message": "El precio no puede estar vacio"})
-        if int(body.get("precio")) < 0:
+        if int(body.get("precio")) <= 0:
             return JsonResponse({"message": "El precio no puede ser negativo"})
         # obtener los produtos de hoy
         productos_hoy = productos.objects.filter(created_at=datetime.today())
