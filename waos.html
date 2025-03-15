@@ -1,62 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
-    <script src="https://unpkg.com/@babel/standalone"></script>
-    <script type="text/babel" src="components/button.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style rel="style" href="/css/style.css"></style>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <!-- Agregar el script de Babel -->
+    <script src="https://unpkg.com/@babel/standalone"></script>
+    <script type="text/babel" src="components/Button.js"></script>
+    <script type="text/babel" src="components/Alumno.js"></script>
+    <link rel="stylesheet" href="styles/styles.css">
     <title>Document</title>
 </head>
 <body>
-    <div id="root"></div>
+    <div id="root">
+
+    </div>
 </body>
 <script type="text/babel">
-    function App(){
-        
-        function verParrafo(){
-            setVisible(!visible);
-        }
+    
+    function App() {
         const { useState } = React;
-        const [contador, setContador] = useState(0);
-        const [contador2, setContador2] = useState(0);
-        const [visible, setVisible] = useState(true);
-        const [texto, setTexto] = useState('Hola Mundo');
-        const [alumnos, setAlumnos] = useState(["Cat", "Tank Cat", "Gross Cat", "Titan Cat"]);
-        const [alumnoCalificacion, setAlumnoCalificacion] = useState([
-            {nombre : "Cat", calificacion : 100, materia : "matematicas"},
-            {nombre : "Tank Cat", calificacion : 100, materia : "matematicas"},
-            {nombre : "Grass Cat", calificacion : 100, materia : "matematicas"},
-            {nombre : "Titan Cat", calificacion : 100, materia : "matematicas"},
-            {nombre : "Axe Cat", calificacion : 100, materia : "matematicas"},
-            {nombre : "Bird Cat", calificacion : 100, materia : "matematicas"},
-            {nombre : "Bahamut Cat", calificacion : 100, materia : "matematicas"},
-            {nombre : "Valkyrie Cat", calificacion : 100, materia : "matematicas"}
+        const alumnos = [
+            { nombre: "Juan", matricula: "A123", calificacion: 10 },
+            { nombre: "Pepe", matricula: "B456", calificacion: 9 },
+            { nombre: "Pablo", matricula: "C789", calificacion: 4 },
+            { nombre: "Fernando", matricula: "D101", calificacion: 100 }
+        ];
 
-        ]
-        )
-        return(
+        return (
             <div>
-                <h1>Saaaaaaaaaaaaludos</h1>
-                <Button titulo="Saludar" contador={contador} setContador={setContador}/>
-                <h2>Contador #1 {contador}</h2>
-                <Button titulo="Despedir" contador={contador2} setContador={setContador2}/>
-                <h2>Contador #2 {contador2}</h2>
-                <button onClick={verParrafo}>Ver parrafo</button>
+                <h1>Lista de Alumnos</h1>
                 <div className="container">
-                   {alumnoCalificacion.map((alumno, index) => (
-                            <div style={{display : visible ? 'block' : 'none'}}>
-                                <p>Este es el alumno {alumno.nombre}</p>
-                                <p>Calificacion {alumno.calificacion}</p>
-                            </div>
+                    {alumnos.map((alumno, index) => (
+                        <Alumno 
+                            key={index} 
+                            nombre={alumno.nombre} 
+                            matricula={alumno.matricula} 
+                            calificacion={alumno.calificacion} 
+                        />
                     ))}
                 </div>
             </div>
-                );
+        );
+
     }
-    const root = ReactDOM.createRoot(document.getElementById('root'));
+    
+    const root = ReactDOM.createRoot(document.querySelector("#root"));
     root.render(<App />);
 </script>
 </html>
