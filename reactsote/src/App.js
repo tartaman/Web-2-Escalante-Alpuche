@@ -1,13 +1,21 @@
 import './App.css';
-import MyFirstComponent from './components/MyFirstComponent';
-import Form from './components/Form/Form';
-import Profile from "./components/Profile"
+import {Link} from 'react-router-dom';
+import MyRouters from './router/Router';
 function App() {
   return (
     <div className="App">
-      <MyFirstComponent />
-      <Form/>
-      <Profile/>
+      <header className="App-header">
+      <nav>
+        <ul>
+          <li><Link to="/">Inicio</Link></li>
+          <li><Link to="/about">Acerca</Link></li>
+          <li><Link to="/contact">Contacto</Link></li>
+          <li><Link to="/login">Login</Link></li>
+          <li><Link to="/products">Productos</Link></li>
+        </ul>
+      </nav>
+      </header>
+      <MyRouters/>
     </div>
   );
 }
