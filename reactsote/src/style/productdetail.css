@@ -1,0 +1,69 @@
+.product-detail {
+    color: #8C8D96;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem auto;
+    width: 75%;
+    border-radius: 20px;
+    background-color: #212936;
+    padding: 20px;
+    z-index: 1;
+}
+.product-detail__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+.product-detail__name {
+    text-align: center;
+}
+.product-detail__price {
+    text-align: center;
+}
+.product-detail__description {
+    text-align: justify;
+}
+.product-detail__button {
+    align-self: center;
+    padding: 10px 30px;
+    border-radius: 10rem;
+    background: linear-gradient(180deg, #845eee 0%, #652cd1 100%);
+    border: none;
+    color: white;
+}
+.product-detail__quantity {
+    padding: 15px;
+    width: 35%;
+    margin: auto;
+    border-radius: 1rem;
+    background-color: rgba(0,0,0,0);
+    border:1px solid #4D5562;
+    margin: 10px 0;
+}
+.product-detail__button:hover {
+    align-self: center;
+    padding: 10px 30px;
+    border-radius: 10rem;
+    background: linear-gradient(360deg, #845eee 0%, #652cd1 100%);
+    border: none;
+    color: white;
+}
+.product-detail::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 20px;
+    padding: 2px; /* Define el grosor del borde */
+    background: linear-gradient(180deg, #5a5a5a, #383446);
+    -webkit-mask: linear-gradient(white 0 0) content-box, linear-gradient(white 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    z-index: -1;
+}

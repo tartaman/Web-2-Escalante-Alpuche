@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom"
 import { useEffect, useState } from "react";
-import ProductListItem from "../components/ProductListItem";
+import ProductDetail from "../components/ProductDetail";
 export default function Product() {
     const {id} = useParams();
 
@@ -15,7 +15,7 @@ export default function Product() {
     }, [id])
     return ( 
         <div> 
-            {product && <ProductListItem title={product.title} id={product.id} description={product.description} images={product.images}/>}
+            {product && <ProductDetail product={product} />}
         </div>
     )
 }
