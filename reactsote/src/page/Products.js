@@ -54,7 +54,7 @@ export default function Products() {
                 <p className="barritas">///////////////////////////////////////////////////</p>
             </div>
             <div style={{ display: "flex", justifyContent: "center" }}>
-                <input onChange={(e) => setWord(e.target.value)} placeholder="Buscar productos..." />
+                <input className="search" onChange={(e) => setWord(e.target.value)} placeholder="Buscar productos..." />
             </div>
 
             {loading && <p style={{ textAlign: "center" }}>Cargando productos...</p>}

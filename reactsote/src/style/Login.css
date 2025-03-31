@@ -5,7 +5,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: auto;
+    margin: 10rem auto;
     width: 35%;
     border-radius: 20px;
     background-color: #212936;
@@ -16,7 +16,16 @@
     text-align: justify;
     padding: 10px;
 }
-
+.search {
+    padding: 15px;
+    width: 85%;
+    margin: auto;
+    border-radius: 1rem;
+    background-color: rgba(0,0,0,0);
+    border:1px solid #4D5562;
+    color: white;
+    margin: 10px 0;
+}
 .formLogin {
     display: flex;
     flex-direction: column;
