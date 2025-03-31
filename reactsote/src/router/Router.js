@@ -5,6 +5,7 @@ import About from "../page/About"
 import Contact from "../page/Contact"
 import Login from "../page/Login"
 import Products from "../page/Products"
+import Product from "../page/Product"
 export default function MyRouters() {
   return (
     <Routes>
@@ -15,6 +16,7 @@ export default function MyRouters() {
       <Route path="/Products" element={<Products/>}/>
       <Route path="*" element={<h1>404 Not Found</h1>}/>
       <Route path="/products" element={<Products/>}/>
+      <Route path="/product/:id" element={<Product/>}/>
     </Routes>
   )
 }

@@ -1,18 +1,22 @@
+import { useEffect } from "react";
 import "../style/products.css"
-export default function ProductListItem() {
+import { Navigate } from "react-router-dom";
+export default function ProductListItem({title, id, description, images}) {
+    const image = images?.[0] ?? ""
     return (
         <div className="product-list-item">
             <div className="product-image">
-                <img src="https://i.pinimg.com/170x/56/6a/8b/566a8b03ee78dd47250c559e26906df9.jpg" alt="Product"/>
+                <img src={image} alt="Product"/>
                 
             </div>
             <div className="product-details">
                 <h2>
-                    Aqui va el nombre del producto y mas texto de ejemplo
+                    {title}
                 </h2>
                 <p>
-                   escribire 50 veces lorem ipsum para que se vea bien en la pagina y no se vea tan feo y se vea como un producto real 
+                   {description}
                 </p>
+                <a href={`/product/${id}`}>Ver Producto</a>
             </div>
         </div>
     );  
