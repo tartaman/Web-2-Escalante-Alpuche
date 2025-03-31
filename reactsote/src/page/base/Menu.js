@@ -15,6 +15,7 @@ export default function Menu() {
                 <li><Link to="/contact">Contacto</Link></li>
                 <li><Link to="/login">Login</Link></li>
                 <li><Link to="/products">Productos</Link></li>
+                <li><Link to="/carrito">Carrito</Link></li>
               </ul>
             </nav>
             </header>}

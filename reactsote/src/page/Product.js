@@ -1,7 +1,13 @@
 import { useParams } from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import ProductDetail from "../components/ProductDetail";
 export default function Product() {
+    const hasTokenInLocalStorage = localStorage.getItem("token") !== null;
+    const navigate = useNavigate();
+    if (!hasTokenInLocalStorage) {
+        navigate("/login");
+    }
     const {id} = useParams();
 
     const [product, setProduct] = useState(null);

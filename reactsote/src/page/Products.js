@@ -6,10 +6,10 @@ import { useEffect, useState } from "react";
 export default function Products() {
     const hasTokenInLocalStorage = localStorage.getItem("token") !== null;
     const navigate = useNavigate();
-    
     if (!hasTokenInLocalStorage) {
         navigate("/login");
     }
+    
 
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
