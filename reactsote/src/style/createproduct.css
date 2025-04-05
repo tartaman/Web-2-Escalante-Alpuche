@@ -1,0 +1,45 @@
+body {
+    background-color: white;
+    color: black;
+}
+.CreateProductForm {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+}
+.title {
+    text-align: center;
+}
+.containerFor2Divs {
+    width: 100%;
+}
+.DivInput {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.CreateProductForm  input{
+    padding: .3rem .1rem;
+    border: 1px solid gray;
+    color:black;
+    border-radius: .1rem;
+    width: 100%;
+    margin: 12px 0;
+}
+.CreateProductForm select {
+    padding: .3rem .1rem;
+    border: 1px solid gray;
+    color:black;
+    border-radius: .1rem;
+    width: 100%;
+    margin: 12px 0;
+}
+.split {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+    gap: .4rem;
+}

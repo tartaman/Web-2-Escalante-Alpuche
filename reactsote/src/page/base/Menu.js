@@ -16,6 +16,7 @@ export default function Menu() {
                 <li><Link to="/login">Login</Link></li>
                 <li><Link to="/products">Productos</Link></li>
                 <li><Link to="/carrito">Carrito</Link></li>
+                <li><Link to="/create-product">Crear Producto</Link></li>
               </ul>
             </nav>
             </header>}
