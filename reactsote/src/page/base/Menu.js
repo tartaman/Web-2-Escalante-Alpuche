@@ -17,6 +17,7 @@ export default function Menu() {
                 <li><Link to="/products">Productos</Link></li>
                 <li><Link to="/carrito">Carrito</Link></li>
                 <li><Link to="/create-product">Crear Producto</Link></li>
+                <li><Link to="/reducer-component">Reducer Component</Link></li>
               </ul>
             </nav>
             </header>}

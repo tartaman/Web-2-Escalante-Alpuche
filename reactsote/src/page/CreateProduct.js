@@ -1,7 +1,24 @@
-import { useEffect, useState, useNavigate } from 'react'
+import { useEffect, useState, useReducer } from 'react'
 import { useFormStatus } from 'react-dom'
+import { useNavigate } from 'react-router-dom'
 import '../style/createproduct.css'
 import CreateProductActions from '../functions/CreateProductActions';
+function productAction(state, action) {
+    
+    if (action.type === "POST") {
+        const data = {
+            ...action.payload
+        }
+        console.log(data)
+    }
+    if (action.type === "PATCH") {
+        const {id, ...rest} = action.payload
+        const data = {
+            ...rest
+        }
+        console.log(data)
+    }
+}
 export default function CreateProduct() {
     const hasTokenInLocalStorage = localStorage.getItem("token") !== null;
     const navigate = useNavigate();
@@ -9,6 +26,12 @@ export default function CreateProduct() {
         navigate("/login");
     }
     const [categories, setCategories] = useState([])
+    const [state, dispatch] = useReducer(productAction, {
+        title: "",
+        description: "",
+        price: "",
+        category: "",
+    })
     useEffect(() => {
         async function fetchCategories() {
             const response = await fetch("https://dummyjson.com/products/categories");
@@ -18,6 +41,9 @@ export default function CreateProduct() {
         fetchCategories()
     }, [])
     async function submitAction(formData) {
+        const {title, description, price, category} = Object.fromEntries(formData)
+        dispatch({ type: "POST", payload: {title, description, price, category} })
+        return;
         const data = Object.fromEntries(formData)
         const response = await CreateProductActions(data);
         console.log(response);
@@ -33,6 +59,13 @@ export default function CreateProduct() {
         const newProductsString = JSON.stringify(newProducts);
 
         localStorage.setItem("newProducts", newProductsString);
+    }
+    function ButtonWithReducer() {
+        return ( 
+            <div>
+                <button onClick={() => dispatch({ type: "CREATE" })}>Create</button>
+            </div>
+        )
     }
     return (
         <div>
@@ -66,7 +99,7 @@ export default function CreateProduct() {
                         </select>
                     </div>
                 </div>
-                <ButtonSave/>
+                <ButtonWithReducer/>
             </form>
         </div>
     )
